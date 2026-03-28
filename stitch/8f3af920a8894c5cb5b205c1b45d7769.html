@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sonic Lab - Kayıt Listesi</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-highest": "#353534",
+              "on-secondary-fixed": "#07006c",
+              "inverse-surface": "#e5e2e1",
+              "surface-container-high": "#2a2a2a",
+              "on-secondary": "#1000a9",
+              "error-container": "#93000a",
+              "tertiary-fixed-dim": "#ffb4a9",
+              "secondary-fixed-dim": "#c0c1ff",
+              "secondary": "#c0c1ff",
+              "surface-variant": "#353534",
+              "primary-fixed": "#6bff8f",
+              "tertiary-container": "#ff8b7c",
+              "primary": "#4be277",
+              "on-tertiary-fixed-variant": "#7f2a21",
+              "inverse-on-surface": "#313030",
+              "on-tertiary-container": "#76231b",
+              "surface-tint": "#4ae176",
+              "on-primary-fixed-variant": "#005321",
+              "surface": "#131313",
+              "surface-container-lowest": "#0e0e0e",
+              "on-surface": "#e5e2e1",
+              "on-primary-fixed": "#002109",
+              "background": "#131313",
+              "on-tertiary": "#60130d",
+              "on-primary-container": "#004b1e",
+              "surface-bright": "#3a3939",
+              "on-surface-variant": "#bccbb9",
+              "secondary-container": "#3131c0",
+              "outline": "#869585",
+              "surface-container": "#201f1f",
+              "outline-variant": "#3d4a3d",
+              "on-primary": "#003915",
+              "surface-dim": "#131313",
+              "primary-fixed-dim": "#4ae176",
+              "on-error": "#690005",
+              "primary-container": "#22c55e",
+              "on-error-container": "#ffdad6",
+              "tertiary-fixed": "#ffdad5",
+              "on-secondary-container": "#b0b2ff",
+              "error": "#ffb4ab",
+              "on-background": "#e5e2e1",
+              "inverse-primary": "#006e2f",
+              "on-tertiary-fixed": "#410001",
+              "surface-container-low": "#1c1b1b",
+              "tertiary": "#ffb5ab",
+              "secondary-fixed": "#e1e0ff",
+              "on-secondary-fixed-variant": "#2f2ebe"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .waveform-bar {
+        width: 3px;
+        border-radius: 1px;
+        background-color: #353534;
+      }
+      .waveform-bar.active {
+        background-color: #4be277;
+      }
+      body {
+        background-color: #131313;
+        color: #fafafa;
+      }
+    </style>
+</head>
+<body class="font-body selection:bg-primary/30">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-[#131313] dark:bg-[#131313]">
+<div class="flex items-center gap-2">
+<span class="text-xl font-bold tracking-tighter text-[#fafafa] font-headline">Sonic Lab</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-[#BCCBB9] hover:text-[#4BE277] transition-colors duration-200 scale-95 active:opacity-80 transition-transform">
+<span class="material-symbols-outlined">mic</span>
+</button>
+<button class="text-[#BCCBB9] hover:text-[#4BE277] transition-colors duration-200 scale-95 active:opacity-80 transition-transform">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-5xl mx-auto">
+<!-- Header & Search -->
+<section class="mb-10">
+<h1 class="font-headline text-4xl font-bold tracking-tight mb-6">Tüm Kayıtlar</h1>
+<div class="relative group">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-on-surface-variant">search</span>
+</div>
+<input class="w-full bg-surface-container-low border-none rounded-xl py-4 pl-12 pr-4 text-on-surface placeholder:text-on-surface-variant focus:ring-1 focus:ring-primary/50 transition-all font-body" placeholder="Kayıtlarda ara..." type="text"/>
+</div>
+</section>
+<!-- Filters -->
+<div class="flex gap-3 mb-8 overflow-x-auto pb-2 no-scrollbar">
+<button class="px-5 py-2 rounded-full bg-primary-container text-on-primary-container font-headline text-sm font-bold flex items-center gap-2 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+                Tarihe Göre
+            </button>
+<button class="px-5 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-headline text-sm font-bold flex items-center gap-2 hover:text-on-surface transition-all active:scale-95">
+<span class="material-symbols-outlined text-sm">schedule</span>
+                Süreye Göre
+            </button>
+<button class="px-5 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-headline text-sm font-bold flex items-center gap-2 hover:text-on-surface transition-all active:scale-95">
+<span class="material-symbols-outlined text-sm">star</span>
+                Favoriler
+            </button>
+</div>
+<!-- Recording List (Bento-ish Stack) -->
+<div class="flex flex-col gap-4">
+<!-- List Item 1 -->
+<div class="group relative flex flex-col md:flex-row items-center gap-6 p-5 rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-all duration-300 border-l-2 border-transparent hover:border-primary">
+<div class="flex-shrink-0 w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">mic_external_on</span>
+</div>
+<div class="flex-grow min-w-0">
+<div class="flex items-center justify-between mb-1">
+<h3 class="font-headline font-bold text-lg truncate pr-4 text-[#fafafa]">Vokal Prova 1</h3>
+<span class="font-headline text-[10px] uppercase font-bold text-on-surface-variant tracking-widest">2.4 MB</span>
+</div>
+<div class="flex items-center gap-4 text-sm text-on-surface-variant">
+<span class="flex items-center gap-1 font-body">
+<span class="material-symbols-outlined text-xs">event</span>
+                            12 Haz 2024
+                        </span>
+<span class="flex items-center gap-1 font-body">
+<span class="material-symbols-outlined text-xs">timer</span>
+                            03:42
+                        </span>
+</div>
+</div>
+<!-- Waveform Preview -->
+<div class="hidden lg:flex items-end gap-[2px] h-8 w-32 px-4">
+<div class="waveform-bar active h-3"></div>
+<div class="waveform-bar active h-5"></div>
+<div class="waveform-bar active h-4"></div>
+<div class="waveform-bar active h-7"></div>
+<div class="waveform-bar h-6"></div>
+<div class="waveform-bar h-4"></div>
+<div class="waveform-bar h-5"></div>
+<div class="waveform-bar h-2"></div>
+<div class="waveform-bar h-4"></div>
+<div class="waveform-bar h-6"></div>
+<div class="waveform-bar h-3"></div>
+<div class="waveform-bar h-5"></div>
+</div>
+<div class="flex items-center gap-2 ml-auto">
+<button class="p-2 rounded-full hover:bg-secondary-container/20 text-secondary transition-colors" title="Oynat">
+<span class="material-symbols-outlined" data-weight="fill">play_arrow</span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-container-highest text-on-surface-variant transition-colors" title="Düzenle">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-2 rounded-full hover:bg-error-container/20 text-on-surface-variant hover:text-error transition-colors" title="Sil">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+<!-- List Item 2 -->
+<div class="group relative flex flex-col md:flex-row items-center gap-6 p-5 rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-all duration-300 border-l-2 border-transparent hover:border-primary">
+<div class="flex-shrink-0 w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">music_note</span>
+</div>
+<div class="flex-grow min-w-0">
+<div class="flex items-center justify-between mb-1">
+<h3 class="font-headline font-bold text-lg truncate pr-4 text-[#fafafa]">Akustik Gitar Kaydı</h3>
+<span class="font-headline text-[10px] uppercase font-bold text-on-surface-variant tracking-widest">15.8 MB</span>
+</div>
+<div class="flex items-center gap-4 text-sm text-on-surface-variant">
+<span class="flex items-center gap-1 font-body">
+<span class="material-symbols-outlined text-xs">event</span>
+                            10 Haz 2024
+                        </span>
+<span class="flex items-center gap-1 font-body">
+<span class="material-symbols-outlined text-xs">timer</span>
+                            12:15
+                        </span>
+</div>
+</div>
+<!-- Waveform Preview -->
+<div class="hidden lg:flex items-end gap-[2px] h-8 w-32 px-4">
+<div class="waveform-bar active h-2"></div>
+<div class="waveform-bar active h-4"></div>
+<div class="waveform-bar active h-6"></div>
+<div class="waveform-bar active h-3"></div>
+<div class="waveform-bar h-7"></div>
+<div class="waveform-bar h-5"></div>
+<div class="waveform-bar h-4"></div>
+<div class="waveform-bar h-6"></div>
+<div class="waveform-bar h-2"></div>
+<div class="waveform-bar h-5"></div>
+<div class="waveform-bar h-4"></div>
+<div class="waveform-bar h-3"></div>
+</div>
+<div class="flex items-center gap-2 ml-auto">
+<button class="p-2 rounded-full hover:bg-secondary-container/20 text-secondary transition-colors" title="Oynat">
+<span class="material-symbols-outlined" data-weight="fill">play_arrow</span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-container-highest text-on-surface-variant transition-colors" title="Düzenle">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-2 rounded-full hover:bg-error-container/20 text-on-surface-variant hover:text-error transition-colors" title="Sil">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+<!-- List Item 3 -->
+<div class="group relative flex flex-col md:flex-row items-center gap-6 p-5 rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-all duration-300 border-l-2 border-transparent hover:border-primary">
+<div class="flex-shrink-0 w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">podcasts</span>
+</div>
+<div class="flex-grow min-w-0">
+<div class="flex items-center justify-between mb-1">
+<h3 class="font-headline font-bold text-lg truncate pr-4 text-[#fafafa]">Podcast Bölüm 3 - Ham</h3>
+<span class="font-headline text-[10px] uppercase font-bold text-on-surface-variant tracking-widest">48.2 MB</span>
+</div>
+<div class="flex items-center gap-4 text-sm text-on-surface-variant">
+<span class="flex items-center gap-1 font-body">
+<span class="material-symbols-outlined text-xs">event</span>
+                            08 Haz 2024
+                        </span>
+<span class="flex items-center gap-1 font-body">
+<span class="material-symbols-outlined text-xs">timer</span>
+                            45:00
+                        </span>
+</div>
+</div>
+<!-- Waveform Preview -->
+<div class="hidden lg:flex items-end gap-[2px] h-8 w-32 px-4">
+<div class="waveform-bar active h-4"></div>
+<div class="waveform-bar active h-2"></div>
+<div class="waveform-bar active h-5"></div>
+<div class="waveform-bar active h-7"></div>
+<div class="waveform-bar h-3"></div>
+<div class="waveform-bar h-5"></div>
+<div class="waveform-bar h-6"></div>
+<div class="waveform-bar h-4"></div>
+<div class="waveform-bar h-2"></div>
+<div class="waveform-bar h-7"></div>
+<div class="waveform-bar h-5"></div>
+<div class="waveform-bar h-4"></div>
+</div>
+<div class="flex items-center gap-2 ml-auto">
+<button class="p-2 rounded-full hover:bg-secondary-container/20 text-secondary transition-colors" title="Oynat">
+<span class="material-symbols-outlined" data-weight="fill">play_arrow</span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-container-highest text-on-surface-variant transition-colors" title="Düzenle">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-2 rounded-full hover:bg-error-container/20 text-on-surface-variant hover:text-error transition-colors" title="Sil">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Pagination / Load More (Editorial Style) -->
+<div class="mt-12 flex justify-center">
+<button class="group flex flex-col items-center gap-2 text-on-surface-variant hover:text-primary transition-all duration-300">
+<span class="font-headline text-[10px] font-bold tracking-[0.2em] uppercase">Daha Fazla Göster</span>
+<span class="material-symbols-outlined group-hover:translate-y-1 transition-transform">keyboard_arrow_down</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 h-20 bg-[#353534]/60 backdrop-blur-xl shadow-[0_-20px_40px_rgba(0,0,0,0.4)]">
+<div class="flex flex-col items-center justify-center text-[#4BE277] scale-110 font-space-grotesk text-[10px] uppercase font-bold transition-all">
+<span class="material-symbols-outlined mb-1">mic_external_on</span>
+<span>Kayitlar</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#BCCBB9] opacity-70 font-space-grotesk text-[10px] uppercase font-bold hover:text-[#fafafa] transition-all active:scale-90 duration-150">
+<span class="material-symbols-outlined mb-1">add_circle</span>
+<span>Yeni Kayit</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#BCCBB9] opacity-70 font-space-grotesk text-[10px] uppercase font-bold hover:text-[#fafafa] transition-all active:scale-90 duration-150">
+<span class="material-symbols-outlined mb-1">library_music</span>
+<span>Kitaplik</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#BCCBB9] opacity-70 font-space-grotesk text-[10px] uppercase font-bold hover:text-[#fafafa] transition-all active:scale-90 duration-150">
+<span class="material-symbols-outlined mb-1">person</span>
+<span>Profil</span>
+</div>
+</nav>
+</body></html>
