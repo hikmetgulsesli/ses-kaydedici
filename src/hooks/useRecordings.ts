@@ -3,7 +3,7 @@ import type { Recording, RecordingMetadata } from '../types/Recording';
 import {
   getRecordings,
   addRecording,
-  deleteRecording as deleteRecordingFromDB,
+  deleteRecording,
   getRecording,
 } from '../db/storage';
 
@@ -40,7 +40,7 @@ export function useRecordings(): UseRecordingsReturn {
       const data = await getRecordings();
       setRecordings(data.map(toMetadata));
     } catch (err) {
-      setError(err instanceof Error ? err : new Error('Failed to load recordings'));
+      setError(err instanceof Error ? err : new Error('Kayıtlar yüklenemedi'));
     } finally {
       setIsLoading(false);
     }
@@ -57,7 +57,7 @@ export function useRecordings(): UseRecordingsReturn {
   }, [refresh]);
 
   const remove = useCallback(async (id: number): Promise<void> => {
-    await deleteRecordingFromDB(id);
+    await deleteRecording(id);
     await refresh();
   }, [refresh]);
 
