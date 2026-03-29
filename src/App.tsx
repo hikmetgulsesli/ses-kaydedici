@@ -45,7 +45,7 @@ function HomePage() {
   }
 
   if (!hasRecordings) {
-    return <EmptyState onStartRecording={handleStartRecording} />;
+    return <EmptyState />;
   }
 
   return (

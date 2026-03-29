@@ -1,11 +1,8 @@
 import { Link } from 'react-router-dom';
 import './EmptyState.css';
 
-interface EmptyStateProps {
-  onStartRecording?: () => void; // Kept for backward compatibility
-}
 
-function EmptyState({ onStartRecording: _onStartRecording }: EmptyStateProps) {
+function EmptyState() {
   return (
     <div className="empty-state">
       <header className="top-app-bar">
