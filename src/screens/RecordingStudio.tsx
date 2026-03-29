@@ -186,7 +186,7 @@ export default function RecordingStudio({ onRecordingComplete }: RecordingStudio
               <span className="text-on-surface font-medium uppercase">{microphoneStatus === 'active' ? 'AKTİF' : 'İNAKTİF'}</span>
             </div>
           </div>
-          <div classClassName="flex flex-col items-end gap-1 text-right">
+          <div className="flex flex-col items-end gap-1 text-right">
             <span className="font-label text-[10px] text-on-surface-variant uppercase tracking-widest">Sinyal Gücü</span>
             <div className="flex gap-0.5 h-4 items-end">
               {[1, 2, 3, 4, 5].map((level) => (
