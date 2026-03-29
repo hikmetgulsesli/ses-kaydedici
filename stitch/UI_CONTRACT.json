@@ -1,0 +1,1691 @@
+[
+  {
+    "screenId": "0e90a32ad9f042a9a06237e40332f68a",
+    "screenTitle": "0e90a32ad9f042a9a06237e40332f68a",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "mic_external_on\nKayitlar",
+        "href": "#",
+        "line": 198
+      },
+      {
+        "type": "link",
+        "label": "add_circle\nYeni Kayit",
+        "href": "#",
+        "line": 202
+      },
+      {
+        "type": "link",
+        "label": "grade\nFavoriler",
+        "href": "#",
+        "line": 206
+      },
+      {
+        "type": "link",
+        "label": "settings\nAyarlar",
+        "href": "#",
+        "line": 210
+      },
+      {
+        "type": "button",
+        "label": "arrow_back",
+        "line": 87
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 93
+      },
+      {
+        "type": "button",
+        "label": "fast_rewind",
+        "line": 169
+      },
+      {
+        "type": "button",
+        "label": "pause",
+        "line": 172
+      },
+      {
+        "type": "button",
+        "label": "fast_forward",
+        "line": 175
+      },
+      {
+        "type": "button",
+        "label": "download\nİndir",
+        "line": 182
+      },
+      {
+        "type": "button",
+        "label": "share\nPaylaş",
+        "line": 186
+      },
+      {
+        "type": "button",
+        "label": "delete\nSil",
+        "line": 190
+      },
+      {
+        "type": "button",
+        "label": "[icon: arrow_back]",
+        "line": 88
+      },
+      {
+        "type": "button",
+        "label": "[icon: settings]",
+        "line": 94
+      },
+      {
+        "type": "button",
+        "label": "[icon: fast_rewind]",
+        "line": 170
+      },
+      {
+        "type": "button",
+        "label": "[icon: pause]",
+        "line": 173
+      },
+      {
+        "type": "button",
+        "label": "[icon: fast_forward]",
+        "line": 176
+      },
+      {
+        "type": "button",
+        "label": "[icon: download]",
+        "line": 183
+      },
+      {
+        "type": "button",
+        "label": "[icon: share]",
+        "line": 187
+      },
+      {
+        "type": "button",
+        "label": "[icon: delete]",
+        "line": 191
+      },
+      {
+        "type": "button",
+        "label": "[icon: mic_external_on]",
+        "line": 199
+      },
+      {
+        "type": "button",
+        "label": "[icon: add_circle]",
+        "line": 203
+      },
+      {
+        "type": "button",
+        "label": "[icon: grade]",
+        "line": 207
+      },
+      {
+        "type": "button",
+        "label": "[icon: settings]",
+        "line": 211
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "mic_external_on\nKayitlar",
+        "href": "#",
+        "line": 198
+      },
+      {
+        "type": "link",
+        "label": "add_circle\nYeni Kayit",
+        "href": "#",
+        "line": 202
+      },
+      {
+        "type": "link",
+        "label": "grade\nFavoriler",
+        "href": "#",
+        "line": 206
+      },
+      {
+        "type": "link",
+        "label": "settings\nAyarlar",
+        "href": "#",
+        "line": 210
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "arrow_back",
+        "line": 87
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 93
+      },
+      {
+        "type": "button",
+        "label": "fast_rewind",
+        "line": 169
+      },
+      {
+        "type": "button",
+        "label": "pause",
+        "line": 172
+      },
+      {
+        "type": "button",
+        "label": "fast_forward",
+        "line": 175
+      },
+      {
+        "type": "button",
+        "label": "download\nİndir",
+        "line": 182
+      },
+      {
+        "type": "button",
+        "label": "share\nPaylaş",
+        "line": 186
+      },
+      {
+        "type": "button",
+        "label": "delete\nSil",
+        "line": 190
+      },
+      {
+        "type": "button",
+        "label": "[icon: arrow_back]",
+        "line": 88
+      },
+      {
+        "type": "button",
+        "label": "[icon: settings]",
+        "line": 94
+      },
+      {
+        "type": "button",
+        "label": "[icon: fast_rewind]",
+        "line": 170
+      },
+      {
+        "type": "button",
+        "label": "[icon: pause]",
+        "line": 173
+      },
+      {
+        "type": "button",
+        "label": "[icon: fast_forward]",
+        "line": 176
+      },
+      {
+        "type": "button",
+        "label": "[icon: download]",
+        "line": 183
+      },
+      {
+        "type": "button",
+        "label": "[icon: share]",
+        "line": 187
+      },
+      {
+        "type": "button",
+        "label": "[icon: delete]",
+        "line": 191
+      },
+      {
+        "type": "button",
+        "label": "[icon: mic_external_on]",
+        "line": 199
+      },
+      {
+        "type": "button",
+        "label": "[icon: add_circle]",
+        "line": 203
+      },
+      {
+        "type": "button",
+        "label": "[icon: grade]",
+        "line": 207
+      },
+      {
+        "type": "button",
+        "label": "[icon: settings]",
+        "line": 211
+      }
+    ],
+    "inputs": [],
+    "hardcodedData": [],
+    "totalInteractive": 24,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "3c08b8d3570c45bf8cc055e68af6e2c5",
+    "screenTitle": "SES LABORATUVARI - Ana Kayıt Arayüzü",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 101
+      },
+      {
+        "type": "button",
+        "label": "mic_external_on",
+        "line": 104
+      },
+      {
+        "type": "button",
+        "label": "skip_previous",
+        "line": 164
+      },
+      {
+        "type": "button",
+        "label": "play_arrow",
+        "line": 167
+      },
+      {
+        "type": "button",
+        "label": "skip_next",
+        "line": 170
+      },
+      {
+        "type": "button",
+        "label": "stop\nDURDUR",
+        "line": 177
+      },
+      {
+        "type": "button",
+        "label": "mic\nKayıtlar",
+        "line": 213
+      },
+      {
+        "type": "button",
+        "label": "add_circle\nYeni Kayıt",
+        "line": 217
+      },
+      {
+        "type": "button",
+        "label": "library_music\nKitaplık",
+        "line": 221
+      },
+      {
+        "type": "button",
+        "label": "person\nProfil",
+        "line": 225
+      },
+      {
+        "type": "button",
+        "label": "[icon: mic_external_on]",
+        "line": 97
+      },
+      {
+        "type": "button",
+        "label": "[icon: settings]",
+        "line": 102
+      },
+      {
+        "type": "button",
+        "label": "[icon: mic_external_on]",
+        "line": 105
+      },
+      {
+        "type": "button",
+        "label": "[icon: skip_previous]",
+        "line": 165
+      },
+      {
+        "type": "button",
+        "label": "[icon: play_arrow]",
+        "line": 168
+      },
+      {
+        "type": "button",
+        "label": "[icon: skip_next]",
+        "line": 171
+      },
+      {
+        "type": "button",
+        "label": "[icon: stop]",
+        "line": 178
+      },
+      {
+        "type": "button",
+        "label": "[icon: settings_input_component]",
+        "line": 205
+      },
+      {
+        "type": "button",
+        "label": "[icon: mic]",
+        "line": 214
+      },
+      {
+        "type": "button",
+        "label": "[icon: add_circle]",
+        "line": 218
+      },
+      {
+        "type": "button",
+        "label": "[icon: library_music]",
+        "line": 222
+      },
+      {
+        "type": "button",
+        "label": "[icon: person]",
+        "line": 226
+      }
+    ],
+    "navigation": [],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 101
+      },
+      {
+        "type": "button",
+        "label": "mic_external_on",
+        "line": 104
+      },
+      {
+        "type": "button",
+        "label": "skip_previous",
+        "line": 164
+      },
+      {
+        "type": "button",
+        "label": "play_arrow",
+        "line": 167
+      },
+      {
+        "type": "button",
+        "label": "skip_next",
+        "line": 170
+      },
+      {
+        "type": "button",
+        "label": "stop\nDURDUR",
+        "line": 177
+      },
+      {
+        "type": "button",
+        "label": "mic\nKayıtlar",
+        "line": 213
+      },
+      {
+        "type": "button",
+        "label": "add_circle\nYeni Kayıt",
+        "line": 217
+      },
+      {
+        "type": "button",
+        "label": "library_music\nKitaplık",
+        "line": 221
+      },
+      {
+        "type": "button",
+        "label": "person\nProfil",
+        "line": 225
+      },
+      {
+        "type": "button",
+        "label": "[icon: mic_external_on]",
+        "line": 97
+      },
+      {
+        "type": "button",
+        "label": "[icon: settings]",
+        "line": 102
+      },
+      {
+        "type": "button",
+        "label": "[icon: mic_external_on]",
+        "line": 105
+      },
+      {
+        "type": "button",
+        "label": "[icon: skip_previous]",
+        "line": 165
+      },
+      {
+        "type": "button",
+        "label": "[icon: play_arrow]",
+        "line": 168
+      },
+      {
+        "type": "button",
+        "label": "[icon: skip_next]",
+        "line": 171
+      },
+      {
+        "type": "button",
+        "label": "[icon: stop]",
+        "line": 178
+      },
+      {
+        "type": "button",
+        "label": "[icon: settings_input_component]",
+        "line": 205
+      },
+      {
+        "type": "button",
+        "label": "[icon: mic]",
+        "line": 214
+      },
+      {
+        "type": "button",
+        "label": "[icon: add_circle]",
+        "line": 218
+      },
+      {
+        "type": "button",
+        "label": "[icon: library_music]",
+        "line": 222
+      },
+      {
+        "type": "button",
+        "label": "[icon: person]",
+        "line": 226
+      }
+    ],
+    "inputs": [],
+    "hardcodedData": [],
+    "totalInteractive": 22,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "5729c1e6af6641799a62b1a3d615a57d",
+    "screenTitle": "5729c1e6af6641799a62b1a3d615a57d",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "library_music\nKitaplık",
+        "href": "#",
+        "line": 163
+      },
+      {
+        "type": "link",
+        "label": "mic\nKaydet",
+        "href": "#",
+        "line": 168
+      },
+      {
+        "type": "link",
+        "label": "settings\nAyarlar",
+        "href": "#",
+        "line": 173
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 93
+      },
+      {
+        "type": "button",
+        "label": "fiber_manual_record\nKayıt Yapmaya Başla",
+        "line": 125
+      },
+      {
+        "type": "button",
+        "label": "[icon: settings]",
+        "line": 94
+      },
+      {
+        "type": "button",
+        "label": "[icon: mic]",
+        "line": 108
+      },
+      {
+        "type": "button",
+        "label": "[icon: add]",
+        "line": 112
+      },
+      {
+        "type": "button",
+        "label": "[icon: fiber_manual_record]",
+        "line": 127
+      },
+      {
+        "type": "button",
+        "label": "[icon: library_music]",
+        "line": 164
+      },
+      {
+        "type": "button",
+        "label": "[icon: mic]",
+        "line": 169
+      },
+      {
+        "type": "button",
+        "label": "[icon: settings]",
+        "line": 174
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "library_music\nKitaplık",
+        "href": "#",
+        "line": 163
+      },
+      {
+        "type": "link",
+        "label": "mic\nKaydet",
+        "href": "#",
+        "line": 168
+      },
+      {
+        "type": "link",
+        "label": "settings\nAyarlar",
+        "href": "#",
+        "line": 173
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 93
+      },
+      {
+        "type": "button",
+        "label": "fiber_manual_record\nKayıt Yapmaya Başla",
+        "line": 125
+      },
+      {
+        "type": "button",
+        "label": "[icon: settings]",
+        "line": 94
+      },
+      {
+        "type": "button",
+        "label": "[icon: mic]",
+        "line": 108
+      },
+      {
+        "type": "button",
+        "label": "[icon: add]",
+        "line": 112
+      },
+      {
+        "type": "button",
+        "label": "[icon: fiber_manual_record]",
+        "line": 127
+      },
+      {
+        "type": "button",
+        "label": "[icon: library_music]",
+        "line": 164
+      },
+      {
+        "type": "button",
+        "label": "[icon: mic]",
+        "line": 169
+      },
+      {
+        "type": "button",
+        "label": "[icon: settings]",
+        "line": 174
+      }
+    ],
+    "inputs": [],
+    "hardcodedData": [],
+    "totalInteractive": 12,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "61f279aab5524f85bd17b0a811950e02",
+    "screenTitle": "Ayarlar - Sonic Laboratory",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "button",
+        "label": "arrow_back",
+        "line": 97
+      },
+      {
+        "type": "button",
+        "label": "help",
+        "line": 103
+      },
+      {
+        "type": "button",
+        "label": "more_vert",
+        "line": 106
+      },
+      {
+        "type": "button",
+        "label": "Düşük\n128 KB/S",
+        "line": 138
+      },
+      {
+        "type": "button",
+        "label": "Orta\n256 KB/S",
+        "line": 142
+      },
+      {
+        "type": "button",
+        "label": "Yüksek\nFLAC / 24-BIT",
+        "line": 146
+      },
+      {
+        "type": "button",
+        "label": "İptal",
+        "line": 226
+      },
+      {
+        "type": "button",
+        "label": "Kaydet",
+        "line": 229
+      },
+      {
+        "type": "button",
+        "label": "[icon: arrow_back]",
+        "line": 98
+      },
+      {
+        "type": "button",
+        "label": "[icon: help]",
+        "line": 104
+      },
+      {
+        "type": "button",
+        "label": "[icon: more_vert]",
+        "line": 107
+      },
+      {
+        "type": "button",
+        "label": "[icon: expand_more]",
+        "line": 129
+      },
+      {
+        "type": "button",
+        "label": "[icon: dark_mode]",
+        "line": 181
+      },
+      {
+        "type": "button",
+        "label": "[icon: check_circle]",
+        "line": 186
+      },
+      {
+        "type": "button",
+        "label": "[icon: light_mode]",
+        "line": 195
+      },
+      {
+        "type": "button",
+        "label": "[icon: mic]",
+        "line": 237
+      },
+      {
+        "type": "button",
+        "label": "[icon: library_music]",
+        "line": 241
+      },
+      {
+        "type": "button",
+        "label": "[icon: settings]",
+        "line": 245
+      },
+      {
+        "type": "button",
+        "label": "[icon: person]",
+        "line": 249
+      },
+      {
+        "type": "input",
+        "label": "select",
+        "inputType": "select",
+        "line": 123
+      }
+    ],
+    "navigation": [],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "arrow_back",
+        "line": 97
+      },
+      {
+        "type": "button",
+        "label": "help",
+        "line": 103
+      },
+      {
+        "type": "button",
+        "label": "more_vert",
+        "line": 106
+      },
+      {
+        "type": "button",
+        "label": "Düşük\n128 KB/S",
+        "line": 138
+      },
+      {
+        "type": "button",
+        "label": "Orta\n256 KB/S",
+        "line": 142
+      },
+      {
+        "type": "button",
+        "label": "Yüksek\nFLAC / 24-BIT",
+        "line": 146
+      },
+      {
+        "type": "button",
+        "label": "İptal",
+        "line": 226
+      },
+      {
+        "type": "button",
+        "label": "Kaydet",
+        "line": 229
+      },
+      {
+        "type": "button",
+        "label": "[icon: arrow_back]",
+        "line": 98
+      },
+      {
+        "type": "button",
+        "label": "[icon: help]",
+        "line": 104
+      },
+      {
+        "type": "button",
+        "label": "[icon: more_vert]",
+        "line": 107
+      },
+      {
+        "type": "button",
+        "label": "[icon: expand_more]",
+        "line": 129
+      },
+      {
+        "type": "button",
+        "label": "[icon: dark_mode]",
+        "line": 181
+      },
+      {
+        "type": "button",
+        "label": "[icon: check_circle]",
+        "line": 186
+      },
+      {
+        "type": "button",
+        "label": "[icon: light_mode]",
+        "line": 195
+      },
+      {
+        "type": "button",
+        "label": "[icon: mic]",
+        "line": 237
+      },
+      {
+        "type": "button",
+        "label": "[icon: library_music]",
+        "line": 241
+      },
+      {
+        "type": "button",
+        "label": "[icon: settings]",
+        "line": 245
+      },
+      {
+        "type": "button",
+        "label": "[icon: person]",
+        "line": 249
+      }
+    ],
+    "inputs": [
+      {
+        "type": "input",
+        "label": "select",
+        "inputType": "select",
+        "line": 123
+      }
+    ],
+    "hardcodedData": [],
+    "totalInteractive": 20,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "8f3af920a8894c5cb5b205c1b45d7769",
+    "screenTitle": "Sonic Lab - Kayıt Listesi",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "button",
+        "label": "mic",
+        "line": 100
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 103
+      },
+      {
+        "type": "button",
+        "label": "calendar_today\n                Tarihe Göre",
+        "line": 121
+      },
+      {
+        "type": "button",
+        "label": "schedule\n                Süreye Göre",
+        "line": 125
+      },
+      {
+        "type": "button",
+        "label": "star\n                Favoriler",
+        "line": 129
+      },
+      {
+        "type": "button",
+        "label": "play_arrow",
+        "line": 173
+      },
+      {
+        "type": "button",
+        "label": "edit",
+        "line": 176
+      },
+      {
+        "type": "button",
+        "label": "delete",
+        "line": 179
+      },
+      {
+        "type": "button",
+        "label": "play_arrow",
+        "line": 221
+      },
+      {
+        "type": "button",
+        "label": "edit",
+        "line": 224
+      },
+      {
+        "type": "button",
+        "label": "delete",
+        "line": 227
+      },
+      {
+        "type": "button",
+        "label": "play_arrow",
+        "line": 269
+      },
+      {
+        "type": "button",
+        "label": "edit",
+        "line": 272
+      },
+      {
+        "type": "button",
+        "label": "delete",
+        "line": 275
+      },
+      {
+        "type": "button",
+        "label": "Daha Fazla Göster\nkeyboard_arrow_down",
+        "line": 283
+      },
+      {
+        "type": "button",
+        "label": "[icon: mic]",
+        "line": 101
+      },
+      {
+        "type": "button",
+        "label": "[icon: settings]",
+        "line": 104
+      },
+      {
+        "type": "button",
+        "label": "[icon: search]",
+        "line": 114
+      },
+      {
+        "type": "button",
+        "label": "[icon: calendar_today]",
+        "line": 122
+      },
+      {
+        "type": "button",
+        "label": "[icon: schedule]",
+        "line": 126
+      },
+      {
+        "type": "button",
+        "label": "[icon: star]",
+        "line": 130
+      },
+      {
+        "type": "button",
+        "label": "[icon: mic_external_on]",
+        "line": 139
+      },
+      {
+        "type": "button",
+        "label": "[icon: event]",
+        "line": 148
+      },
+      {
+        "type": "button",
+        "label": "[icon: timer]",
+        "line": 152
+      },
+      {
+        "type": "button",
+        "label": "[icon: play_arrow]",
+        "line": 174
+      },
+      {
+        "type": "button",
+        "label": "[icon: edit]",
+        "line": 177
+      },
+      {
+        "type": "button",
+        "label": "[icon: delete]",
+        "line": 180
+      },
+      {
+        "type": "button",
+        "label": "[icon: music_note]",
+        "line": 187
+      },
+      {
+        "type": "button",
+        "label": "[icon: event]",
+        "line": 196
+      },
+      {
+        "type": "button",
+        "label": "[icon: timer]",
+        "line": 200
+      },
+      {
+        "type": "button",
+        "label": "[icon: play_arrow]",
+        "line": 222
+      },
+      {
+        "type": "button",
+        "label": "[icon: edit]",
+        "line": 225
+      },
+      {
+        "type": "button",
+        "label": "[icon: delete]",
+        "line": 228
+      },
+      {
+        "type": "button",
+        "label": "[icon: podcasts]",
+        "line": 235
+      },
+      {
+        "type": "button",
+        "label": "[icon: event]",
+        "line": 244
+      },
+      {
+        "type": "button",
+        "label": "[icon: timer]",
+        "line": 248
+      },
+      {
+        "type": "button",
+        "label": "[icon: play_arrow]",
+        "line": 270
+      },
+      {
+        "type": "button",
+        "label": "[icon: edit]",
+        "line": 273
+      },
+      {
+        "type": "button",
+        "label": "[icon: delete]",
+        "line": 276
+      },
+      {
+        "type": "button",
+        "label": "[icon: keyboard_arrow_down]",
+        "line": 285
+      },
+      {
+        "type": "button",
+        "label": "[icon: mic_external_on]",
+        "line": 292
+      },
+      {
+        "type": "button",
+        "label": "[icon: add_circle]",
+        "line": 296
+      },
+      {
+        "type": "button",
+        "label": "[icon: library_music]",
+        "line": 300
+      },
+      {
+        "type": "button",
+        "label": "[icon: person]",
+        "line": 304
+      },
+      {
+        "type": "input",
+        "label": "Kayıtlarda ara...",
+        "inputType": "text",
+        "placeholder": "Kayıtlarda ara...",
+        "line": 116
+      }
+    ],
+    "navigation": [],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "mic",
+        "line": 100
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 103
+      },
+      {
+        "type": "button",
+        "label": "calendar_today\n                Tarihe Göre",
+        "line": 121
+      },
+      {
+        "type": "button",
+        "label": "schedule\n                Süreye Göre",
+        "line": 125
+      },
+      {
+        "type": "button",
+        "label": "star\n                Favoriler",
+        "line": 129
+      },
+      {
+        "type": "button",
+        "label": "play_arrow",
+        "line": 173
+      },
+      {
+        "type": "button",
+        "label": "edit",
+        "line": 176
+      },
+      {
+        "type": "button",
+        "label": "delete",
+        "line": 179
+      },
+      {
+        "type": "button",
+        "label": "play_arrow",
+        "line": 221
+      },
+      {
+        "type": "button",
+        "label": "edit",
+        "line": 224
+      },
+      {
+        "type": "button",
+        "label": "delete",
+        "line": 227
+      },
+      {
+        "type": "button",
+        "label": "play_arrow",
+        "line": 269
+      },
+      {
+        "type": "button",
+        "label": "edit",
+        "line": 272
+      },
+      {
+        "type": "button",
+        "label": "delete",
+        "line": 275
+      },
+      {
+        "type": "button",
+        "label": "Daha Fazla Göster\nkeyboard_arrow_down",
+        "line": 283
+      },
+      {
+        "type": "button",
+        "label": "[icon: mic]",
+        "line": 101
+      },
+      {
+        "type": "button",
+        "label": "[icon: settings]",
+        "line": 104
+      },
+      {
+        "type": "button",
+        "label": "[icon: search]",
+        "line": 114
+      },
+      {
+        "type": "button",
+        "label": "[icon: calendar_today]",
+        "line": 122
+      },
+      {
+        "type": "button",
+        "label": "[icon: schedule]",
+        "line": 126
+      },
+      {
+        "type": "button",
+        "label": "[icon: star]",
+        "line": 130
+      },
+      {
+        "type": "button",
+        "label": "[icon: mic_external_on]",
+        "line": 139
+      },
+      {
+        "type": "button",
+        "label": "[icon: event]",
+        "line": 148
+      },
+      {
+        "type": "button",
+        "label": "[icon: timer]",
+        "line": 152
+      },
+      {
+        "type": "button",
+        "label": "[icon: play_arrow]",
+        "line": 174
+      },
+      {
+        "type": "button",
+        "label": "[icon: edit]",
+        "line": 177
+      },
+      {
+        "type": "button",
+        "label": "[icon: delete]",
+        "line": 180
+      },
+      {
+        "type": "button",
+        "label": "[icon: music_note]",
+        "line": 187
+      },
+      {
+        "type": "button",
+        "label": "[icon: event]",
+        "line": 196
+      },
+      {
+        "type": "button",
+        "label": "[icon: timer]",
+        "line": 200
+      },
+      {
+        "type": "button",
+        "label": "[icon: play_arrow]",
+        "line": 222
+      },
+      {
+        "type": "button",
+        "label": "[icon: edit]",
+        "line": 225
+      },
+      {
+        "type": "button",
+        "label": "[icon: delete]",
+        "line": 228
+      },
+      {
+        "type": "button",
+        "label": "[icon: podcasts]",
+        "line": 235
+      },
+      {
+        "type": "button",
+        "label": "[icon: event]",
+        "line": 244
+      },
+      {
+        "type": "button",
+        "label": "[icon: timer]",
+        "line": 248
+      },
+      {
+        "type": "button",
+        "label": "[icon: play_arrow]",
+        "line": 270
+      },
+      {
+        "type": "button",
+        "label": "[icon: edit]",
+        "line": 273
+      },
+      {
+        "type": "button",
+        "label": "[icon: delete]",
+        "line": 276
+      },
+      {
+        "type": "button",
+        "label": "[icon: keyboard_arrow_down]",
+        "line": 285
+      },
+      {
+        "type": "button",
+        "label": "[icon: mic_external_on]",
+        "line": 292
+      },
+      {
+        "type": "button",
+        "label": "[icon: add_circle]",
+        "line": 296
+      },
+      {
+        "type": "button",
+        "label": "[icon: library_music]",
+        "line": 300
+      },
+      {
+        "type": "button",
+        "label": "[icon: person]",
+        "line": 304
+      }
+    ],
+    "inputs": [
+      {
+        "type": "input",
+        "label": "Kayıtlarda ara...",
+        "inputType": "text",
+        "placeholder": "Kayıtlarda ara...",
+        "line": 116
+      }
+    ],
+    "hardcodedData": [],
+    "totalInteractive": 45,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "c181af98dd3345e780568c98d2f1b091",
+    "screenTitle": "404 - Sayfa Bulunamadı | Sonic Lab",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "home\n                        Ana Sayfaya Dön",
+        "href": "/",
+        "line": 122
+      },
+      {
+        "type": "link",
+        "label": "library_music\nKitaplık",
+        "href": "#",
+        "line": 165
+      },
+      {
+        "type": "link",
+        "label": "mic\nKaydet",
+        "href": "#",
+        "line": 169
+      },
+      {
+        "type": "link",
+        "label": "graphic_eq\nDüzenle",
+        "href": "#",
+        "line": 173
+      },
+      {
+        "type": "link",
+        "label": "person\nProfil",
+        "href": "#",
+        "line": 177
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 98
+      },
+      {
+        "type": "button",
+        "label": "account_circle",
+        "line": 101
+      },
+      {
+        "type": "button",
+        "label": "[icon: settings]",
+        "line": 99
+      },
+      {
+        "type": "button",
+        "label": "[icon: account_circle]",
+        "line": 102
+      },
+      {
+        "type": "button",
+        "label": "[icon: home]",
+        "line": 123
+      },
+      {
+        "type": "button",
+        "label": "[icon: search_off]",
+        "line": 157
+      },
+      {
+        "type": "button",
+        "label": "[icon: library_music]",
+        "line": 166
+      },
+      {
+        "type": "button",
+        "label": "[icon: mic]",
+        "line": 170
+      },
+      {
+        "type": "button",
+        "label": "[icon: graphic_eq]",
+        "line": 174
+      },
+      {
+        "type": "button",
+        "label": "[icon: person]",
+        "line": 178
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "home\n                        Ana Sayfaya Dön",
+        "href": "/",
+        "line": 122
+      },
+      {
+        "type": "link",
+        "label": "library_music\nKitaplık",
+        "href": "#",
+        "line": 165
+      },
+      {
+        "type": "link",
+        "label": "mic\nKaydet",
+        "href": "#",
+        "line": 169
+      },
+      {
+        "type": "link",
+        "label": "graphic_eq\nDüzenle",
+        "href": "#",
+        "line": 173
+      },
+      {
+        "type": "link",
+        "label": "person\nProfil",
+        "href": "#",
+        "line": 177
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 98
+      },
+      {
+        "type": "button",
+        "label": "account_circle",
+        "line": 101
+      },
+      {
+        "type": "button",
+        "label": "[icon: settings]",
+        "line": 99
+      },
+      {
+        "type": "button",
+        "label": "[icon: account_circle]",
+        "line": 102
+      },
+      {
+        "type": "button",
+        "label": "[icon: home]",
+        "line": 123
+      },
+      {
+        "type": "button",
+        "label": "[icon: search_off]",
+        "line": 157
+      },
+      {
+        "type": "button",
+        "label": "[icon: library_music]",
+        "line": 166
+      },
+      {
+        "type": "button",
+        "label": "[icon: mic]",
+        "line": 170
+      },
+      {
+        "type": "button",
+        "label": "[icon: graphic_eq]",
+        "line": 174
+      },
+      {
+        "type": "button",
+        "label": "[icon: person]",
+        "line": 178
+      }
+    ],
+    "inputs": [],
+    "hardcodedData": [],
+    "totalInteractive": 15,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "c249abc91ca946a8a266bb788941253a",
+    "screenTitle": "c249abc91ca946a8a266bb788941253a",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "mic_none\nKayitlar",
+        "href": "#",
+        "line": 158
+      },
+      {
+        "type": "link",
+        "label": "add_circle\nYeni Ses",
+        "href": "#",
+        "line": 162
+      },
+      {
+        "type": "link",
+        "label": "science\nLaboratuvar",
+        "href": "#",
+        "line": 166
+      },
+      {
+        "type": "link",
+        "label": "person\nProfil",
+        "href": "#",
+        "line": 170
+      },
+      {
+        "type": "button",
+        "label": "help",
+        "line": 89
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 92
+      },
+      {
+        "type": "button",
+        "label": "Yeniden Dene\nrefresh",
+        "line": 125
+      },
+      {
+        "type": "button",
+        "label": "Kılavuzu Oku",
+        "line": 129
+      },
+      {
+        "type": "button",
+        "label": "[icon: help]",
+        "line": 90
+      },
+      {
+        "type": "button",
+        "label": "[icon: settings]",
+        "line": 93
+      },
+      {
+        "type": "button",
+        "label": "[icon: warning]",
+        "line": 105
+      },
+      {
+        "type": "button",
+        "label": "[icon: refresh]",
+        "line": 127
+      },
+      {
+        "type": "button",
+        "label": "[icon: mic_none]",
+        "line": 159
+      },
+      {
+        "type": "button",
+        "label": "[icon: add_circle]",
+        "line": 163
+      },
+      {
+        "type": "button",
+        "label": "[icon: science]",
+        "line": 167
+      },
+      {
+        "type": "button",
+        "label": "[icon: person]",
+        "line": 171
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "mic_none\nKayitlar",
+        "href": "#",
+        "line": 158
+      },
+      {
+        "type": "link",
+        "label": "add_circle\nYeni Ses",
+        "href": "#",
+        "line": 162
+      },
+      {
+        "type": "link",
+        "label": "science\nLaboratuvar",
+        "href": "#",
+        "line": 166
+      },
+      {
+        "type": "link",
+        "label": "person\nProfil",
+        "href": "#",
+        "line": 170
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "help",
+        "line": 89
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 92
+      },
+      {
+        "type": "button",
+        "label": "Yeniden Dene\nrefresh",
+        "line": 125
+      },
+      {
+        "type": "button",
+        "label": "Kılavuzu Oku",
+        "line": 129
+      },
+      {
+        "type": "button",
+        "label": "[icon: help]",
+        "line": 90
+      },
+      {
+        "type": "button",
+        "label": "[icon: settings]",
+        "line": 93
+      },
+      {
+        "type": "button",
+        "label": "[icon: warning]",
+        "line": 105
+      },
+      {
+        "type": "button",
+        "label": "[icon: refresh]",
+        "line": 127
+      },
+      {
+        "type": "button",
+        "label": "[icon: mic_none]",
+        "line": 159
+      },
+      {
+        "type": "button",
+        "label": "[icon: add_circle]",
+        "line": 163
+      },
+      {
+        "type": "button",
+        "label": "[icon: science]",
+        "line": 167
+      },
+      {
+        "type": "button",
+        "label": "[icon: person]",
+        "line": 171
+      }
+    ],
+    "inputs": [],
+    "hardcodedData": [],
+    "totalInteractive": 16,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  }
+]

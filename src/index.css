@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+@import "../stitch/design-tokens.css";
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --font-headline: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-label: 'Space Grotesk', sans-serif;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-on-surface);
+  font-family: var(--font-body);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+::selection {
+  background-color: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+}
+
+.font-headline {
+  font-family: var(--font-headline);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.font-label {
+  font-family: var(--font-label);
+}
