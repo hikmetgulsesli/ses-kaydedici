@@ -1,13 +1,10 @@
 import { Link } from 'react-router-dom';
-import type { RecordingMetadata } from '../types/Recording';
 import BottomNavBar from '../components/BottomNavBar';
+import { useRecordings } from '../hooks/useRecordings';
 
-interface RecordingListProps {
-  recordings: RecordingMetadata[];
-  onDelete: (id: number) => void;
-}
+export default function RecordingList() {
+  const { recordings, remove } = useRecordings();
 
-export default function RecordingList({ recordings, onDelete }: RecordingListProps) {
   const formatDuration = (seconds: number): string => {
     const m = Math.floor(seconds / 60);
     const s = seconds % 60;
@@ -124,7 +121,7 @@ export default function RecordingList({ recordings, onDelete }: RecordingListPro
                   <span className="material-symbols-outlined">play_arrow</span>
                 </Link>
                 <button
-                  onClick={() => recording.id && onDelete(recording.id)}
+                  onClick={() => recording.id && remove(recording.id)}
                   className="p-2 rounded-full hover:bg-error-container/20 text-on-surface-variant hover:text-error transition-colors"
                   title="Sil"
                 >
