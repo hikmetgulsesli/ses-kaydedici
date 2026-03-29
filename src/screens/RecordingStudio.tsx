@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { db } from '../db/RecordingsDB';
+import { generateRecordingName } from '../db/storage';
 import type { Recording } from '../types/Recording';
 import BottomNavBar from '../components/BottomNavBar';
 
@@ -58,7 +59,7 @@ export default function RecordingStudio({ onRecordingComplete }: RecordingStudio
         const waveformData = generateWaveformData();
 
         const recording: Omit<Recording, 'id'> = {
-          name: `Kayıt ${new Date().toLocaleDateString('tr-TR')}`,
+          name: generateRecordingName(),
           blob: audioBlob,
           duration: duration,
           createdAt: new Date(),
