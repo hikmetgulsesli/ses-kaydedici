@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { db } from '../db/RecordingsDB';
+import { generateRecordingName } from '../db/storage';
 import type { Recording } from '../types/Recording';
 import BottomNavBar from '../components/BottomNavBar';
 
@@ -58,7 +59,7 @@ export default function RecordingStudio({ onRecordingComplete }: RecordingStudio
         const waveformData = generateWaveformData();
 
         const recording: Omit<Recording, 'id'> = {
-          name: `Kayıt ${new Date().toLocaleDateString('tr-TR')}`,
+          name: generateRecordingName(),
           blob: audioBlob,
           duration: duration,
           createdAt: new Date(),
@@ -185,7 +186,7 @@ export default function RecordingStudio({ onRecordingComplete }: RecordingStudio
               <span className="text-on-surface font-medium uppercase">{microphoneStatus === 'active' ? 'AKTİF' : 'İNAKTİF'}</span>
             </div>
           </div>
-          <div className="flex flex-col items-end gap-1 text-right">
+          <div classClassName="flex flex-col items-end gap-1 text-right">
             <span className="font-label text-[10px] text-on-surface-variant uppercase tracking-widest">Sinyal Gücü</span>
             <div className="flex gap-0.5 h-4 items-end">
               {[1, 2, 3, 4, 5].map((level) => (
