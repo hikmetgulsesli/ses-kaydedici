@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect, useCallback } from 'react';
 import type { Recording } from '../types/Recording';
+import type { MouseEvent, ChangeEvent } from 'react';
 
 interface AudioPlayerProps {
   recording: Recording;
@@ -50,13 +51,23 @@ export default function AudioPlayer({ recording, onDelete }: AudioPlayerProps) {
   const togglePlay = useCallback(() => {
     const audio = audioRef.current;
     if (!audio) return;
-    if (isPlaying) {
+    if (!audio.paused) {
       audio.pause();
-    } else {
-      audio.play();
+      setIsPlaying(false);
+      return;
     }
-    setIsPlaying(!isPlaying);
-  }, [isPlaying]);
+    const playPromise = audio.play();
+    if (playPromise !== undefined) {
+      playPromise
+        .then(() => {
+          setIsPlaying(true);
+        })
+        .catch(() => {
+          audio.pause();
+          setIsPlaying(false);
+        });
+    }
+  }, []);
 
   const handleTimeUpdate = useCallback(() => {
     const audio = audioRef.current;
@@ -72,17 +83,18 @@ export default function AudioPlayer({ recording, onDelete }: AudioPlayerProps) {
     }
   }, [recording.duration]);
 
-  const handleSeek = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+  const handleSeek = useCallback((e: MouseEvent<HTMLDivElement>) => {
     const audio = audioRef.current;
     if (!audio || !duration) return;
     const rect = e.currentTarget.getBoundingClientRect();
     const x = e.clientX - rect.left;
-    const percent = x / rect.width;
-    audio.currentTime = percent * duration;
-    setCurrentTime(percent * duration);
+    const clampedPercent = Math.max(0, Math.min(1, x / rect.width));
+    const newTime = clampedPercent * duration;
+    audio.currentTime = newTime;
+    setCurrentTime(newTime);
   }, [duration]);
 
-  const handleVolumeChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleVolumeChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
     const value = parseFloat(e.target.value);
     setVolume(value);
     if (audioRef.current) {
@@ -91,7 +103,7 @@ export default function AudioPlayer({ recording, onDelete }: AudioPlayerProps) {
   }, []);
 
   const handleDownload = useCallback(() => {
-    if (!recording.blob) return;
+    if (!audioUrl) return;
     const date = new Date(recording.createdAt);
     const year = date.getFullYear();
     const month = String(date.getMonth() + 1).padStart(2, '0');
@@ -99,16 +111,16 @@ export default function AudioPlayer({ recording, onDelete }: AudioPlayerProps) {
     const hours = String(date.getHours()).padStart(2, '0');
     const minutes = String(date.getMinutes()).padStart(2, '0');
     const seconds = String(date.getSeconds()).padStart(2, '0');
-    const filename = `kayit_${year}-${month}-${day}_${hours}-${minutes}-${seconds}.webm`;
-    const url = URL.createObjectURL(recording.blob);
+    const mimeType = recording.blob.type;
+    const ext = mimeType.includes('webm') ? 'webm' : mimeType.includes('mp3') ? 'mp3' : 'wav';
+    const filename = `kayit_${year}-${month}-${day}_${hours}-${minutes}-${seconds}.${ext}`;
     const a = document.createElement('a');
-    a.href = url;
+    a.href = audioUrl;
     a.download = filename;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-  }, [recording]);
+  }, [recording.createdAt, audioUrl, recording.blob]);
 
   const handleDelete = useCallback(() => {
     if (!recording.id || !onDelete) return;
@@ -151,7 +163,7 @@ export default function AudioPlayer({ recording, onDelete }: AudioPlayerProps) {
         <section className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
           <div className="space-y-1">
             <span className="font-label text-[10px] text-on-surface-variant uppercase tracking-widest">Kayıt Detayları</span>
-            <h2 className="font-headline text-3xl font-bold text-[#fafafa] tracking-tighter">{recording.name}.wav</h2>
+            <h2 className="font-headline text-3xl font-bold text-[#fafafa] tracking-tighter">{recording.name}.webm</h2>
           </div>
           <div className="flex gap-8">
             <div className="flex flex-col">
@@ -182,7 +194,7 @@ export default function AudioPlayer({ recording, onDelete }: AudioPlayerProps) {
                 />
               ))
             ) : (
-              Array.from({ length: 25 }).map((_, i: number) => (
+              Array.from({ length: waveformBarCount }).map((_, i: number) => (
                 <div
                   key={i}
                   className="waveform-bar w-1.5 bg-secondary/30 rounded-full h-[40%]"
@@ -211,7 +223,7 @@ export default function AudioPlayer({ recording, onDelete }: AudioPlayerProps) {
           </div>
 
           <div className="flex items-center justify-center gap-12">
-            <button className="text-on-surface-variant hover:text-secondary transition-colors">
+            <button disabled className="text-on-surface-variant transition-colors opacity-50 cursor-not-allowed">
               <span className="material-symbols-outlined text-3xl">fast_rewind</span>
             </button>
             <button
@@ -222,7 +234,7 @@ export default function AudioPlayer({ recording, onDelete }: AudioPlayerProps) {
                 {isPlaying ? 'pause' : 'play_arrow'}
               </span>
             </button>
-            <button className="text-on-surface-variant hover:text-secondary transition-colors">
+            <button disabled className="text-on-surface-variant transition-colors opacity-50 cursor-not-allowed">
               <span className="material-symbols-outlined text-3xl">fast_forward</span>
             </button>
           </div>
@@ -275,10 +287,15 @@ export default function AudioPlayer({ recording, onDelete }: AudioPlayerProps) {
           <span className="material-symbols-outlined">add_circle</span>
           <span className="font-space-grotesk text-[10px] font-medium uppercase mt-1">Yeni Kayit</span>
         </a>
-        <a className="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:opacity-100 hover:text-secondary transition-all duration-300 ease-in-out" href="#">
+        <button
+          type="button"
+          disabled
+          aria-disabled="true"
+          className="flex flex-col items-center justify-center text-on-surface-variant opacity-60 cursor-default bg-transparent border-0 transition-all duration-300 ease-in-out"
+        >
           <span className="material-symbols-outlined">grade</span>
           <span className="font-space-grotesk text-[10px] font-medium uppercase mt-1">Favoriler</span>
-        </a>
+        </button>
         <a className="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:opacity-100 hover:text-secondary transition-all duration-300 ease-in-out" href="/settings">
           <span className="material-symbols-outlined">settings</span>
           <span className="font-space-grotesk text-[10px] font-medium uppercase mt-1">Ayarlar</span>
