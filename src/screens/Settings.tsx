@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import BottomNavBar from '../components/BottomNavBar';
 import { getAudioSettings, saveAudioSettings, type AudioSettings } from '../utils/audioSettings';
@@ -21,32 +21,39 @@ export default function Settings() {
   const [devices, setDevices] = useState<DeviceInfo[]>([]);
   const [permissionGranted, setPermissionGranted] = useState(false);
 
-  const enumerateDevices = useCallback(async () => {
-    try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      stream.getTracks().forEach(t => t.stop());
-      setPermissionGranted(true);
-    } catch {
-      setPermissionGranted(false);
-    }
-
-    try {
-      const allDevices = await navigator.mediaDevices.enumerateDevices();
-      const audioInputs = allDevices
-        .filter(d => d.kind === 'audioinput')
-        .map(d => ({
-          deviceId: d.deviceId,
-          label: d.label || `Mikrofon ${d.deviceId.slice(0, 8)}`,
-        }));
-      setDevices(audioInputs);
-    } catch {
-      setDevices([]);
-    }
-  }, []);
-
   useEffect(() => {
+    let mounted = true;
+
+    async function enumerateDevices() {
+      let hasPermission = false;
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        stream.getTracks().forEach(t => t.stop());
+        hasPermission = true;
+      } catch {
+        hasPermission = false;
+      }
+      if (!mounted) return;
+      setPermissionGranted(hasPermission);
+
+      try {
+        const allDevices = await navigator.mediaDevices.enumerateDevices();
+        if (!mounted) return;
+        const audioInputs = allDevices
+          .filter(d => d.kind === 'audioinput')
+          .map(d => ({
+            deviceId: d.deviceId,
+            label: d.label || `Mikrofon ${d.deviceId.slice(0, 8)}`,
+          }));
+        setDevices(audioInputs);
+      } catch {
+        if (mounted) setDevices([]);
+      }
+    }
+
     enumerateDevices();
-  }, [enumerateDevices]);
+    return () => { mounted = false; };
+  }, []);
 
   const handleSave = () => {
     saveAudioSettings(settings);

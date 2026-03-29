@@ -1,26 +1,35 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import NotFound from './screens/NotFound';
 import Settings from './screens/Settings';
 
 export default function App() {
   const [hasPermission, setHasPermission] = useState<boolean | null>(null);
 
-  const checkMicrophonePermission = useCallback(async () => {
-    try {
-      const result = await navigator.permissions.query({ name: 'microphone' as PermissionName });
-      setHasPermission(result.state === 'granted');
-      result.onchange = () => {
-        setHasPermission(result.state === 'granted');
-      };
-    } catch {
-      setHasPermission(true);
-    }
-  }, []);
-
   useEffect(() => {
-    checkMicrophonePermission();
-  }, [checkMicrophonePermission]);
+    let mounted = true;
+
+    async function checkPermission() {
+      try {
+        const result = await navigator.permissions.query({ name: 'microphone' as PermissionName });
+        if (mounted) {
+          setHasPermission(result.state === 'granted');
+        }
+        result.onchange = () => {
+          if (mounted) {
+            setHasPermission(result.state === 'granted');
+          }
+        };
+      } catch {
+        if (mounted) {
+          setHasPermission(true);
+        }
+      }
+    }
+
+    checkPermission();
+    return () => { mounted = false; };
+  }, []);
 
   if (hasPermission === null) {
     return (
