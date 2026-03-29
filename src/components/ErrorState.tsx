@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './ErrorState.css';
 
 interface ErrorStateProps {
@@ -83,22 +84,22 @@ function ErrorState({ type, onRetry, onReadGuide }: ErrorStateProps) {
       </main>
 
       <nav className="bottom-nav">
-        <a href="#" className="nav-item">
+        <Link to="/recordings" className="nav-item">
           <span className="material-symbols-outlined">mic_none</span>
           <span className="nav-label">Kayitlar</span>
-        </a>
-        <a href="#" className="nav-item active">
+        </Link>
+        <Link to="/studio" className="nav-item active">
           <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>add_circle</span>
           <span className="nav-label">Yeni Ses</span>
-        </a>
-        <a href="#" className="nav-item">
+        </Link>
+        <Link to="/" className="nav-item">
           <span className="material-symbols-outlined">science</span>
           <span className="nav-label">Laboratuvar</span>
-        </a>
-        <a href="#" className="nav-item">
+        </Link>
+        <Link to="/settings" className="nav-item">
           <span className="material-symbols-outlined">person</span>
           <span className="nav-label">Profil</span>
-        </a>
+        </Link>
       </nav>
     </div>
   );

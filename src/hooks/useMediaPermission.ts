@@ -16,7 +16,7 @@ export function useMediaPermission() {
     initRef.current = true;
 
     if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
+       
       setIsSupported(false);
        
       setPermissionState('unsupported');

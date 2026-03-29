@@ -5,6 +5,10 @@ import ErrorState from './components/ErrorState';
 import EmptyState from './components/EmptyState';
 import NotFound from './components/NotFound';
 import { useMediaPermission } from './hooks/useMediaPermission';
+import RecordingStudio from './screens/RecordingStudio';
+import RecordingList from './screens/RecordingList';
+import RecordingDetail from './screens/RecordingDetail';
+import Settings from './screens/Settings';
 
 function HomePage() {
   const navigate = useNavigate();
@@ -49,9 +53,9 @@ function HomePage() {
       <header className="top-app-bar">
         <div className="app-title">Sonic Lab</div>
         <div className="app-bar-right">
-          <button className="icon-button" aria-label="Ayarlar">
+          <Link to="/settings" className="icon-button" aria-label="Ayarlar">
             <span className="material-symbols-outlined">settings</span>
-          </button>
+          </Link>
         </div>
       </header>
 
@@ -89,6 +93,10 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/error" element={<ErrorPage />} />
+        <Route path="/recordings" element={<RecordingList />} />
+        <Route path="/recordings/:id" element={<RecordingDetail />} />
+        <Route path="/studio" element={<RecordingStudio />} />
+        <Route path="/settings" element={<Settings />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>

@@ -1,18 +1,19 @@
+import { Link } from 'react-router-dom';
 import './EmptyState.css';
 
 interface EmptyStateProps {
-  onStartRecording?: () => void;
+  onStartRecording?: () => void; // Kept for backward compatibility
 }
 
-function EmptyState({ onStartRecording }: EmptyStateProps) {
+function EmptyState({ onStartRecording: _onStartRecording }: EmptyStateProps) {
   return (
     <div className="empty-state">
       <header className="top-app-bar">
         <div className="app-title">Sonic Lab</div>
         <div className="app-bar-right">
-          <button className="icon-button" aria-label="Ayarlar">
+          <Link to="/settings" className="icon-button" aria-label="Ayarlar">
             <span className="material-symbols-outlined">settings</span>
-          </button>
+          </Link>
         </div>
       </header>
 
@@ -39,10 +40,10 @@ function EmptyState({ onStartRecording }: EmptyStateProps) {
             </p>
           </div>
 
-          <button className="cta-button" onClick={onStartRecording}>
+          <Link to="/studio" className="cta-button">
             <span className="material-symbols-outlined">fiber_manual_record</span>
             <span>Kayıt Yapmaya Başla</span>
-          </button>
+          </Link>
 
           <div className="metadata-label">
             <div className="meta-item">
@@ -74,18 +75,18 @@ function EmptyState({ onStartRecording }: EmptyStateProps) {
       </main>
 
       <nav className="bottom-nav">
-        <a href="#" className="nav-item active">
+        <Link to="/" className="nav-item active">
           <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>library_music</span>
           <span className="nav-label">Kitaplık</span>
-        </a>
-        <a href="#" className="nav-item">
+        </Link>
+        <Link to="/studio" className="nav-item">
           <span className="material-symbols-outlined">mic</span>
           <span className="nav-label">Kaydet</span>
-        </a>
-        <a href="#" className="nav-item">
+        </Link>
+        <Link to="/settings" className="nav-item">
           <span className="material-symbols-outlined">settings</span>
           <span className="nav-label">Ayarlar</span>
-        </a>
+        </Link>
       </nav>
     </div>
   );
