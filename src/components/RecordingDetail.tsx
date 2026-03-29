@@ -51,7 +51,7 @@ export function RecordingDetail({
   if (!recording) {
     return (
       <main className="min-h-screen pb-32 pt-6 px-6 max-w-4xl mx-auto flex flex-col items-center justify-center">
-        <h1 className="font-headline text-3xl font-bold text-[#fafafa]">Kayıt bulunamadı</h1>
+        <h1 className="font-headline text-3xl font-bold text-[var(--color-on-surface)]">Kayıt bulunamadı</h1>
         <Link to="/list" className="mt-4 text-[var(--color-primary)] hover:underline">
           Kayıt listesine dön
         </Link>
@@ -64,7 +64,7 @@ export function RecordingDetail({
   return (
     <>
       {/* TopAppBar */}
-      <header className="bg-[#1C1B1B] sticky top-0 z-50 flex justify-between items-center w-full px-6 py-4">
+      <header className="bg-[var(--color-surface-container-low)] sticky top-0 z-50 flex justify-between items-center w-full px-6 py-4">
         <div className="flex items-center gap-4">
           <button
             onClick={() => navigate('/list')}
@@ -90,7 +90,7 @@ export function RecordingDetail({
             <span className="font-label text-[10px] text-[var(--color-on-surface-variant)] uppercase tracking-widest">
               Kayıt Detayları
             </span>
-            <h2 className="font-headline text-3xl font-bold text-[#fafafa] tracking-tighter">
+            <h2 className="font-headline text-3xl font-bold text-[var(--color-on-surface)] tracking-tighter">
               {recording.name}.{recording.format}
             </h2>
           </div>
@@ -128,7 +128,7 @@ export function RecordingDetail({
                   height: `${height}%`,
                   backgroundColor: i < Math.floor(progress / 100 * 27)
                     ? 'var(--color-secondary)'
-                    : 'var(--color-secondary)/30'
+                    : 'color-mix(in srgb, var(--color-secondary) 30%, transparent)'
                 }}
               />
             ))}
@@ -136,7 +136,7 @@ export function RecordingDetail({
 
           {/* Timecode */}
           <div className="flex flex-col items-center">
-            <div className="font-headline text-6xl font-medium tracking-tighter text-[#fafafa]">
+            <div className="font-headline text-6xl font-medium tracking-tighter text-[var(--color-on-surface)]">
               {formatDuration(currentTime)}
               <span className="text-[var(--color-secondary)]/50"> / {formatDuration(recording.duration)}</span>
             </div>
@@ -159,13 +159,16 @@ export function RecordingDetail({
               style={{ width: `${progress}%` }}
             />
             <div
-              className="absolute top-1/2 left-[--progress] -translate-y-1/2 w-4 h-4 bg-[var(--color-secondary)] rounded-full shadow-lg border-2 border-[var(--color-background)]"
+              className="absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-[var(--color-secondary)] rounded-full shadow-lg border-2 border-[var(--color-background)]"
               style={{ left: `${progress}%` }}
             />
           </div>
 
           <div className="flex items-center justify-center gap-12">
-            <button className="text-[var(--color-on-surface-variant)] hover:text-[var(--color-secondary)] transition-colors">
+            <button
+              className="text-[var(--color-on-surface-variant)] hover:text-[var(--color-secondary)] transition-colors"
+              onClick={() => onSeek(Math.max(0, currentTime - 10))}
+            >
               <span className="material-symbols-outlined text-3xl">fast_rewind</span>
             </button>
             <button
@@ -176,7 +179,10 @@ export function RecordingDetail({
                 {isPlaying ? 'pause' : 'play_arrow'}
               </span>
             </button>
-            <button className="text-[var(--color-on-surface-variant)] hover:text-[var(--color-secondary)] transition-colors">
+            <button
+              className="text-[var(--color-on-surface-variant)] hover:text-[var(--color-secondary)] transition-colors"
+              onClick={() => onSeek(Math.min(recording.duration, currentTime + 10))}
+            >
               <span className="material-symbols-outlined text-3xl">fast_forward</span>
             </button>
           </div>
@@ -191,7 +197,14 @@ export function RecordingDetail({
             <span className="material-symbols-outlined text-[var(--color-secondary)] group-hover:scale-110 transition-transform">download</span>
             <span className="font-headline text-sm font-medium uppercase tracking-wider text-[var(--color-on-surface)]">İndir</span>
           </button>
-          <button className="flex items-center justify-center gap-3 bg-[var(--color-surface-container-high)] hover:bg-[var(--color-surface-container-highest)] p-4 rounded-xl transition-all group">
+          <button
+            className="flex items-center justify-center gap-3 bg-[var(--color-surface-container-high)] hover:bg-[var(--color-surface-container-highest)] p-4 rounded-xl transition-all group"
+            onClick={() => {
+              if (navigator.share) {
+                navigator.share({ title: recording.name, url: recording.audioUrl });
+              }
+            }}
+          >
             <span className="material-symbols-outlined text-[var(--color-secondary)] group-hover:scale-110 transition-transform">share</span>
             <span className="font-headline text-sm font-medium uppercase tracking-wider text-[var(--color-on-surface)]">Paylaş</span>
           </button>

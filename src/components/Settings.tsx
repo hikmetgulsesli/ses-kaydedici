@@ -4,13 +4,14 @@ import type { AppSettings } from '../types';
 interface SettingsProps {
   settings: AppSettings;
   onSave: (settings: AppSettings) => void;
+  onCancel: () => void;
 }
 
-export function Settings({ settings, onSave }: SettingsProps) {
+export function Settings({ settings, onSave, onCancel }: SettingsProps) {
   return (
     <>
       {/* TopAppBar */}
-      <header className="fixed top-0 w-full z-50 bg-[#1C1B1B] flex items-center justify-between w-full px-6 h-16">
+      <header className="fixed top-0 w-full z-50 bg-[var(--color-surface-container-low)] flex items-center justify-between w-full px-6 h-16">
         <div className="flex items-center gap-4">
           <Link
             to="/"
@@ -18,7 +19,7 @@ export function Settings({ settings, onSave }: SettingsProps) {
           >
             <span className="material-symbols-outlined">arrow_back</span>
           </Link>
-          <h1 className="font-headline tracking-tight text-[#fafafa] uppercase text-sm font-bold">
+          <h1 className="font-headline tracking-tight text-[var(--color-on-surface)] uppercase text-sm font-bold">
             Ayarlar
           </h1>
         </div>
@@ -40,7 +41,7 @@ export function Settings({ settings, onSave }: SettingsProps) {
               Ses Ayarları
             </h2>
             <span className="font-label text-[10px] uppercase tracking-[0.2em] text-[var(--color-on-surface-variant)]">
-              Audio Engine v2.4
+              Ses Motoru v2.4
             </span>
           </header>
 
@@ -54,11 +55,11 @@ export function Settings({ settings, onSave }: SettingsProps) {
                 <select
                   className="w-full bg-[var(--color-surface-container-low)] border-none rounded-none py-4 px-5 appearance-none font-body text-[var(--color-on-surface)] focus:ring-1 focus:ring-[var(--color-primary-container)]/30 cursor-pointer transition-all"
                   value={settings.selectedMicrophone}
-                  onChange={() => {}}
+                  onChange={(e) => onSave({ ...settings, selectedMicrophone: e.target.value })}
                 >
-                  <option>Dahili Mikrofon</option>
-                  <option selected>Studio Mic Pro-X</option>
-                  <option>Virtual Audio Cable</option>
+                  <option value="Dahili Mikrofon">Dahili Mikrofon</option>
+                  <option value="Studio Mic Pro-X">Studio Mic Pro-X</option>
+                  <option value="Virtual Audio Cable">Virtual Audio Cable</option>
                 </select>
                 <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-[var(--color-on-surface-variant)]">
                   <span className="material-symbols-outlined">expand_more</span>
@@ -66,89 +67,86 @@ export function Settings({ settings, onSave }: SettingsProps) {
               </div>
             </div>
 
-            {/* Bento Style Quality & Format */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Ses Kalitesi */}
-              <div className="bg-[var(--color-surface-container-low)] p-6 rounded-none space-y-4">
-                <label className="font-label text-xs uppercase tracking-widest text-[var(--color-on-surface-variant)] block">
-                  Ses Kalitesi
-                </label>
-                <div className="flex flex-col gap-2">
-                  <button
-                    className={`flex items-center justify-between p-3 transition-colors text-[var(--color-on-surface-variant)] ${
-                      settings.audioQuality === 'low' ? 'bg-[var(--color-surface)]' : 'bg-[var(--color-surface-container-high)] hover:bg-[var(--color-surface-container-highest)]'
-                    }`}
-                    onClick={() => onSave({ ...settings, audioQuality: 'low' })}
-                  >
-                    <span className="text-sm">Düşük</span>
-                    <span className="font-label text-[9px]">128 KB/S</span>
-                  </button>
-                  <button
-                    className={`flex items-center justify-between p-3 transition-colors text-[var(--color-on-surface-variant)] ${
-                      settings.audioQuality === 'medium' ? 'bg-[var(--color-surface)]' : 'bg-[var(--color-surface-container-high)] hover:bg-[var(--color-surface-container-highest)]'
-                    }`}
-                    onClick={() => onSave({ ...settings, audioQuality: 'medium' })}
-                  >
-                    <span className="text-sm">Orta</span>
-                    <span className="font-label text-[9px]">256 KB/S</span>
-                  </button>
-                  <button
-                    className={`flex items-center justify-between p-3 transition-colors ${
-                      settings.audioQuality === 'high'
-                        ? 'bg-[var(--color-surface-container-highest)] border-l-2 border-[var(--color-primary)] text-[var(--color-primary)]'
-                        : 'bg-[var(--color-surface-container-high)] hover:bg-[var(--color-surface-container-highest)] text-[var(--color-on-surface-variant)]'
-                    }`}
-                    onClick={() => onSave({ ...settings, audioQuality: 'high' })}
-                  >
-                    <span className="text-sm font-medium">Yüksek</span>
-                    <span className="font-label text-[9px]">FLAC / 24-BIT</span>
-                  </button>
-                </div>
+            {/* Ses Kalitesi */}
+            <div className="bg-[var(--color-surface-container-low)] p-6 rounded-none space-y-4">
+              <label className="font-label text-xs uppercase tracking-widest text-[var(--color-on-surface-variant)] block">
+                Ses Kalitesi
+              </label>
+              <div className="flex flex-col gap-2">
+                <button
+                  className={`flex items-center justify-between p-3 transition-colors text-[var(--color-on-surface-variant)] ${
+                    settings.audioQuality === 'low' ? 'bg-[var(--color-surface)]' : 'bg-[var(--color-surface-container-high)] hover:bg-[var(--color-surface-container-highest)]'
+                  }`}
+                  onClick={() => onSave({ ...settings, audioQuality: 'low' })}
+                >
+                  <span className="text-sm">Düşük</span>
+                  <span className="font-label text-[9px]">128 KB/S</span>
+                </button>
+                <button
+                  className={`flex items-center justify-between p-3 transition-colors text-[var(--color-on-surface-variant)] ${
+                    settings.audioQuality === 'medium' ? 'bg-[var(--color-surface)]' : 'bg-[var(--color-surface-container-high)] hover:bg-[var(--color-surface-container-highest)]'
+                  }`}
+                  onClick={() => onSave({ ...settings, audioQuality: 'medium' })}
+                >
+                  <span className="text-sm">Orta</span>
+                  <span className="font-label text-[9px]">256 KB/S</span>
+                </button>
+                <button
+                  className={`flex items-center justify-between p-3 transition-colors ${
+                    settings.audioQuality === 'high'
+                      ? 'bg-[var(--color-surface-container-highest)] border-l-2 border-[var(--color-primary)] text-[var(--color-primary)]'
+                      : 'bg-[var(--color-surface-container-high)] hover:bg-[var(--color-surface-container-highest)] text-[var(--color-on-surface-variant)]'
+                  }`}
+                  onClick={() => onSave({ ...settings, audioQuality: 'high' })}
+                >
+                  <span className="text-sm font-medium">Yüksek</span>
+                  <span className="font-label text-[9px]">FLAC / 24-BIT</span>
+                </button>
               </div>
+            </div>
 
-              {/* Kayıt Formatı */}
-              <div className="bg-[var(--color-surface-container-low)] p-6 rounded-none flex flex-col justify-between">
-                <div className="space-y-4">
-                  <label className="font-label text-xs uppercase tracking-widest text-[var(--color-on-surface-variant)] block">
-                    Kayıt Formatı
-                  </label>
-                  <div className="flex flex-wrap gap-2">
-                    <button
-                      className={`px-4 py-2 font-label text-[11px] uppercase tracking-wider transition-colors ${
-                        settings.recordingFormat === 'mp3'
-                          ? 'bg-[var(--color-primary-container)] text-[var(--color-on-primary-container)]'
-                          : 'bg-[var(--color-surface)] text-[var(--color-on-surface-variant)]'
-                      }`}
-                      onClick={() => onSave({ ...settings, recordingFormat: 'mp3' })}
-                    >
-                      MP3
-                    </button>
-                    <button
-                      className={`px-4 py-2 font-label text-[11px] uppercase tracking-wider transition-colors ${
-                        settings.recordingFormat === 'wav'
-                          ? 'bg-[var(--color-primary-container)] text-[var(--color-on-primary-container)]'
-                          : 'bg-[var(--color-surface)] text-[var(--color-on-surface-variant)]'
-                      }`}
-                      onClick={() => onSave({ ...settings, recordingFormat: 'wav' })}
-                    >
-                      WAV
-                    </button>
-                    <button
-                      className={`px-4 py-2 font-label text-[11px] uppercase tracking-wider transition-colors ${
-                        settings.recordingFormat === 'webm'
-                          ? 'bg-[var(--color-primary-container)] text-[var(--color-on-primary-container)]'
-                          : 'bg-[var(--color-surface)] text-[var(--color-on-surface-variant)]'
-                      }`}
-                      onClick={() => onSave({ ...settings, recordingFormat: 'webm' })}
-                    >
-                      WebM
-                    </button>
-                  </div>
+            {/* Kayıt Formatı */}
+            <div className="bg-[var(--color-surface-container-low)] p-6 rounded-none flex flex-col justify-between">
+              <div className="space-y-4">
+                <label className="font-label text-xs uppercase tracking-widest text-[var(--color-on-surface-variant)] block">
+                  Kayıt Formatı
+                </label>
+                <div className="flex flex-wrap gap-2">
+                  <button
+                    className={`px-4 py-2 font-label text-[11px] uppercase tracking-wider transition-colors ${
+                      settings.recordingFormat === 'mp3'
+                        ? 'bg-[var(--color-primary-container)] text-[var(--color-on-primary-container)]'
+                        : 'bg-[var(--color-surface)] text-[var(--color-on-surface-variant)]'
+                    }`}
+                    onClick={() => onSave({ ...settings, recordingFormat: 'mp3' })}
+                  >
+                    MP3
+                  </button>
+                  <button
+                    className={`px-4 py-2 font-label text-[11px] uppercase tracking-wider transition-colors ${
+                      settings.recordingFormat === 'wav'
+                        ? 'bg-[var(--color-primary-container)] text-[var(--color-on-primary-container)]'
+                        : 'bg-[var(--color-surface)] text-[var(--color-on-surface-variant)]'
+                    }`}
+                    onClick={() => onSave({ ...settings, recordingFormat: 'wav' })}
+                  >
+                    WAV
+                  </button>
+                  <button
+                    className={`px-4 py-2 font-label text-[11px] uppercase tracking-wider transition-colors ${
+                      settings.recordingFormat === 'webm'
+                        ? 'bg-[var(--color-primary-container)] text-[var(--color-on-primary-container)]'
+                        : 'bg-[var(--color-surface)] text-[var(--color-on-surface-variant)]'
+                    }`}
+                    onClick={() => onSave({ ...settings, recordingFormat: 'webm' })}
+                  >
+                    WebM
+                  </button>
                 </div>
-                <p className="text-[11px] text-[var(--color-on-surface-variant)] leading-relaxed mt-4">
-                  WebM formatı, yüksek kaliteli ses verilerini düşük dosya boyutlarında saklamak için optimize edilmiştir.
-                </p>
               </div>
+              <p className="text-[11px] text-[var(--color-on-surface-variant)] leading-relaxed mt-4">
+                WebM formatı, yüksek kaliteli ses verilerini düşük dosya boyutlarında saklamak için optimize edilmiştir.
+              </p>
             </div>
           </div>
         </section>
@@ -184,11 +182,11 @@ export function Settings({ settings, onSave }: SettingsProps) {
 
             {/* Theme Option: Light */}
             <div className="relative group cursor-pointer border-2 border-transparent hover:border-[var(--color-surface-container-highest)] p-1 bg-[var(--color-surface-container-low)] transition-all">
-              <div className="h-24 bg-[#fafafa] mb-3 relative overflow-hidden">
-                <div className="absolute top-2 left-2 w-8 h-1 bg-neutral-300 rounded-full" />
-                <div className="absolute bottom-2 right-2 w-4 h-4 rounded-full bg-neutral-400 opacity-50" />
+              <div className="h-24 mb-3 relative overflow-hidden">
+                <div className="absolute top-2 left-2 w-8 h-1 bg-[var(--color-outline-variant)] rounded-full" />
+                <div className="absolute bottom-2 right-2 w-4 h-4 rounded-full bg-[var(--color-outline)] opacity-50" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="material-symbols-outlined text-neutral-300 text-4xl">light_mode</span>
+                  <span className="material-symbols-outlined text-[var(--color-outline)] text-4xl">light_mode</span>
                 </div>
               </div>
               <div className="px-2 pb-2 flex justify-between items-center">
@@ -213,12 +211,12 @@ export function Settings({ settings, onSave }: SettingsProps) {
       {/* Fixed Footer Actions */}
       <div className="fixed bottom-20 left-0 w-full glass-panel z-40 border-t border-[var(--color-outline-variant)]/10">
         <div className="max-w-2xl mx-auto px-6 h-24 flex items-center justify-between gap-6">
-          <Link
-            to="/"
+          <button
+            onClick={onCancel}
             className="flex-1 font-headline uppercase text-xs tracking-widest py-4 bg-transparent border border-[var(--color-outline-variant)]/30 text-[var(--color-on-surface-variant)] hover:bg-[var(--color-surface-container-high)] transition-all text-center"
           >
             İptal
-          </Link>
+          </button>
           <button
             className="flex-[2] font-headline uppercase text-xs font-bold tracking-[0.2em] py-4 bg-[var(--color-primary-container)] text-[var(--color-on-primary-container)] hover:shadow-[0_0_20px_rgba(34,197,94,0.3)] transition-all active:scale-95 duration-200"
             onClick={() => onSave(settings)}
